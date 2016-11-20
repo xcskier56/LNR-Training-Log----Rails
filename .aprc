@@ -1,0 +1,31 @@
+AwesomePrint.defaults = {
+  :indent     => 4,      # Indent using 4 spaces.
+  :index      => true,   # Display array indices.
+  :html       => false,  # Use ANSI color codes rather than HTML.
+  :multiline  => true,   # Display in multiple lines.
+  :plain      => false,  # Use colors.
+  :raw        => false,  # Do not recursively format object instance variables.
+  :sort_keys  => false,  # Do not sort hash keys.
+  :limit      => false,  # Limit large output for arrays and hashes. Set to a boolean or integer.
+  :color => {
+    :args       => :red,
+    :array      => :red,
+    :bigdecimal => :red,
+    :class      => :red,
+    :date       => :red,
+    :falseclass => :red,
+    :fixnum     => :red,
+    :float      => :red,
+    :hash       => :red,
+    :keyword    => :red,
+    :method     => :red,
+    :nilclass   => :red,
+    :rational   => :red,
+    :string     => :red,
+    :struct     => :red,
+    :symbol     => :red,
+    :time       => :red,
+    :trueclass  => :red,
+    :variable   => :red
+  }
+}
