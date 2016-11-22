@@ -29,10 +29,12 @@
 #  tokens                 :json
 #
 
-require 'test_helper'
-
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class CurrentUserSerializer < ActiveModel::Serializer
+  attributes :id,
+    :first_name,
+    :last_name,
+    :email,
+    :birthday,
+    :gender,
+    :slug
 end
