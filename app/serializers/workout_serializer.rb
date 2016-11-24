@@ -19,12 +19,9 @@
 #  workout_type_id   :integer          not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  user_id: 1
-  name: MyString
-
-two:
-  user_id: 1
-  name: MyString
+class WorkoutSerializer < ActiveModel::Serializer
+  attributes :id, :name, :date, :feeling, :notes,
+    :level_1_duration, :level_2_duration, :level_3_duration,
+    :level_4_duration, :level_5_duration, :strength_duration,
+    :user_id, :workout_type_id, :created_at, :updated_at
+end

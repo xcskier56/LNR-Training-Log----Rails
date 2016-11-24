@@ -19,12 +19,23 @@
 #  workout_type_id   :integer          not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+require 'rails_helper'
 
-one:
-  user_id: 1
-  name: MyString
+RSpec.describe Workout, type: :model do
+  describe 'duration validations' do
+    let(:workout_type) { WorkoutType.first }
+    let(:user) { User.new }
+    let(:workout_attrs) do
+      {
+        name: workout_type.name, workout_type: workout_type,
+        date: Date.current, feeling: 4, user: user
+      }
+    end
+    let(:workout) { Workout.new(workout_attrs) }
 
-two:
-  user_id: 1
-  name: MyString
+    it 'validates workout is invalid' do
+      expect(workout.valid?).to eq false
+      expect(workout.errors.keys).to eq [:duration]
+    end
+  end
+end

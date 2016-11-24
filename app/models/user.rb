@@ -29,7 +29,7 @@
 #  tokens                 :json
 #
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :friendly_name, use: [:slugged, :finders]
+
+  has_many :workouts, inverse_of: :user, dependent: :destroy
 
   private
   # ============================================================
@@ -52,5 +54,9 @@ class User < ActiveRecord::Base
 
   def friendly_name
     "#{first_name.capitalize if first_name} #{last_name.capitalize if last_name}"
+  end
+
+  def active_model_serializer
+    CurrentUserSerializer
   end
 end

@@ -11,7 +11,7 @@ gem 'friendly_id'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'pg'
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.8.0'
 gem 'birthday'
 gem 'responders'
 gem 'redis-rails'
@@ -26,6 +26,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'factory_girl_rails'
+  gem 'awesome_print', '~> 1.7'
 end
 
 group :development do

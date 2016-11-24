@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161120005421) do
+ActiveRecord::Schema.define(version: 20161122202821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 20161120005421) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
 
+  create_table "workout_types", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "workouts", force: :cascade do |t|
     t.string   "name"
     t.date     "date",                          null: false
@@ -66,6 +72,7 @@ ActiveRecord::Schema.define(version: 20161120005421) do
     t.integer  "user_id",                       null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.integer  "workout_type_id",               null: false
   end
 
 end

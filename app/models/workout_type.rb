@@ -1,13 +1,13 @@
 # == Schema Information
 #
-# Table name: teams
+# Table name: workout_types
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  slug       :string
+#  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Team < ApplicationRecord
+class WorkoutType < ApplicationRecord
+  has_many :workouts
 end

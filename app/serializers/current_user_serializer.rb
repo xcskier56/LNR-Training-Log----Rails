@@ -30,11 +30,5 @@
 #
 
 class CurrentUserSerializer < ActiveModel::Serializer
-  attributes :id,
-    :first_name,
-    :last_name,
-    :email,
-    :birthday,
-    :gender,
-    :slug
+  attributes :id, :first_name, :last_name, :email, :birthday, :gender, :slug
 end
