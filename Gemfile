@@ -15,6 +15,7 @@ gem 'active_model_serializers', '~> 0.8.0'
 gem 'birthday'
 gem 'responders'
 gem 'redis-rails'
+gem 'uglifier'
 
 # Use Unicorn as the app server
 gem 'unicorn'
