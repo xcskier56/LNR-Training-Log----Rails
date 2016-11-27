@@ -18,6 +18,7 @@ class Ability
 
     # Workout
     can :create, Workout, user_id: user.id
+    can :manage, Workout, user_id: user.id
     can :read, Workout, user_id: user.id
 
     # WorkoutType

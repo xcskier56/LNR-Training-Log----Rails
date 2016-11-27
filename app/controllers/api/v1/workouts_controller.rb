@@ -24,6 +24,12 @@ class Api::V1::WorkoutsController < ApplicationController
     handle_create_success(@workout)
   end
 
+  def destroy
+    workout = Workout.find(params[:id])
+    workout.destroy!
+    head 204
+  end
+
   private
 
   def handle_create_failure(e, workout)
