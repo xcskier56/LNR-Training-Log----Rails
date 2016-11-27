@@ -16,6 +16,10 @@ class Api::V1::WorkoutsController < ApplicationController
     render json: @workouts, status: 200
   end
 
+  def show
+    render json: @workout, status: 200
+  end
+
   def create
     @workout.save!
   rescue => e
